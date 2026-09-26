@@ -1,23 +1,86 @@
 aid: auditfile
+
 name: AuditFile
-description: 'AuditFile is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: AuditFile provides secure, cloud‑based audit software for CPA firms, combining AI‑enabled workflows, risk assessment, workpapers,
+  reporting, and client portal features. Founded in 2011, AuditFile pioneered cloud audit and continues to innovate with patented AI tools, offering
+  integrations with popular accounting platforms and a suite of products for modern audit practices.
+
 url: https://raw.githubusercontent.com/api-evangelist/auditfile/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
-- Company
-apis: []
+- Accounting
+- Audit
+- Cloud
+- AI
+- CPA
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Plans
+  url: plans/auditfile-plans-pricing.yml
+- type: Compliance
+  url: https://auditfile.com/security
+- type: Hosts
+  url: hosts/auditfile-hosts.yml
+- type: Vendors
+  url: vendors/auditfile-vendors.yml
+- type: Support
+  url: https://auditfile.com/help
+- type: GitHubOrganization
+  url: https://github.com/AuditFile
+- type: TrustCenter
+  url: security/auditfile-trust-center.yml
+- type: DomainSecurity
+  url: security/auditfile-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://auditfile.com/
+- type: Pricing
+  url: https://auditfile.com/pricing
+- type: SignUp
+  url: https://auditfile.com/
+- type: Login
+  url: https://auditfile.com/signin
+
+apis:
+- name: AuditFile API
+  description: AuditFile provides API access to its audit software platform. Documentation is available at the pricing page, but no machine‑readable
+    contract was found.
+  humanURL: https://auditfile.com/pricing
+  baseURL: null
+  aid: auditfile:auditfile-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL, gRPC, or WSDL contract was discovered at any host.
+  evidence:
+  - url: https://api.auditfile.com/openapi.json
+    status: failed
+  - url: https://auditfile.com/openapi.json
+    status: 404
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

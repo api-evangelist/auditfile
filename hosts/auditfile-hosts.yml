@@ -1,0 +1,77 @@
+generated: '2026-09-26'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 4
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - other
+  - source
+  - status
+  - website
+hosts:
+- host: api.auditfile.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: auditfile.com
+  role: api
+  relation: own
+- host: auditfile.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Compliance
+  - Support
+  - Website
+  - Pricing
+  - SignUp
+  - Login
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: auditfile.com
+  role: website
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: status.auditfile.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: auditfile.com
+  role: status
+  relation: own
+- host: trust.auditfile.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: auditfile.com
+  role: other
+  relation: own
